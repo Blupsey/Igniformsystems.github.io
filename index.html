@@ -4,29 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="purcom.css" rel="stylesheet">
+    <link href="purcom2.css" rel="stylesheet">
     <link href="https://db.onlinewebfonts.com/c/313f02964c8d44206a2182575daa4233?family=Agrandir+Narrow+Bold" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/telegraf" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet">
-    <script src="purcom.js" defer></script>
+    <script src="purcom2.js" defer></script>
 </head>
-<style>
-html, body {
+<style>html, body {
     height: 200vh;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-}
-
-.homepage {
-    visibility: hidden;
-}
-
-.homepage.active {
-    visibility: visible;
-    position: relative;
-    height: auto;
-    top: 49%;
     width: 100%;
     margin: 0px;
     padding: 0px;
@@ -38,13 +23,17 @@ html, body {
     width: 100%;
     padding: 0px;
     margin: 0px;
-    background-image: url("https://github.com/Blupsey/background-imagess/blob/main/image_2026-03-15_202149917.png?raw=true");
+    background-image: url("https://raw.githubusercontent.com/Blupsey/background-imagess/main/image_2026-03-15_202149917.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.mainpage {
+.background.active {
+    height: 200vh;
+}
+
+.main {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -55,127 +44,97 @@ html, body {
     background-color: #fffcf7;
 }
 
-.mainpage.active {
-    visibility: hidden;
+.main[data-state="1"] {
+    position: absolute;
+    top: 100vh;
+    left: 50%;
+    height: 167vh; 
+    width: 67%; 
+    background-color: #fffcf7; 
+    border-radius: 40px; 
+    z-index: 4;
+    transition: enlarge 0.5s ease-in-out;
 }
 
-.buttons {
+.main[data-state="1"].active {
     position: absolute;
-    top: 18%;
-    left: 17.5%;
-    width: 65%;
-    height: 5%;
+    top: 100vh;
+    left: 50%;
+    height: 160-vh; 
+    width: 67%; 
+    background-color: #fffcf7; 
+    border-radius: 40px; 
+    z-index: 4;
+    transition: enlarge2 0.5s ease-in-out forwards;
+}
+
+.navbar {
+    position: relative;
+    border-radius: 38px 38px 0 0;
+    height: 7vh;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
+}
+
+.line {
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    height: 3px;
+    top: 90%;
 }
 
 .button1 {
     position: relative;
-    height: 80%;
-    width: 10%;
+    height: 8vh;
+    width: 24%;
     background-color: transparent;
     border-color: transparent;
     border-radius: 40px;
     font-family: "Agrandir Narrow Bold", sans-serif;
-    cursor: pointer;
 }
 
-.b1 {
+.comname {
     position: relative;
-    left: 4%;
-    transition: all .5s ease;
-    color: #0a0a0a;
-    background-color : transparent;
-    outline: none;
+    top: 10%;
+    width: 66vw;
+    object-fit: cover;
+    object-position: center;
 }
 
-.b1:hover {
-    color: #001F3F;
-    background-color: #dadada;
-}
-
-.b2 {
-    position: relative;
-    left: 14%;
-    transition: all .5s ease;
-    color: #0a0a0a;
-    background-color : transparent;
-    outline: none;
-}
-
-.b2:hover {
-    color: #001F3F;
-    background-color: #dadada;
-}
-
-.b3 {
-    position: relative;
-    left: 24%;
-    transition: all .5s ease;
-    color: #0a0a0a;
-    background-color : transparent;
-    outline: none;
-}
-
-.b3:hover {
-    color: #001F3F;
-    background-color: #dadada;
-}
-
-.b4 {
-    position: relative;
-    left: 34%;
-    transition: all .5s ease;
-    color: #0a0a0a;
-    background-color : transparent;
-    outline: none;
-}
-
-.b4:hover {
-    color: #001F3F;
-    background-color: #dadada;
-}
-
-.b5 {
-    position: relative;
-    left: 44%;
-    transition: all .5s ease;
-    color: #0a0a0a;
-    background-color : transparent;
-    outline: none;
-}
-
-.b5:hover {
-    color: #001F3F;
-    background-color: #dadada;
-}
-
-.line {
+.bottext {
     position: absolute;
-    background-color: black;
-    top: 85%;
-    height: 1px;
-    width: 100%;
+    height: 10%;
+    padding: 0px;
+    width: auto;
     z-index: 1;
+    top: 58vh;
+    left: 4vw;
+    font-family: "Agrandir Narrow bold", sans-serif;
 }
 
-.button2 {
+.t2 {
     position: absolute;
+    top: 20%;
+}
+
+.next{
+    position: absolute;
+    top: 48vh;
+    left: 0.5vw;
     height: 10vh;
     width: 20vw;
+    text-align: center;
     border-radius: 67px;
     background-color: #c83a3a;
     border-color: transparent;
-    top: 63%;
-    left: 17%;
-    z-index: 1;
+    z-index: 4;
     font-family: "Agrandir Narrow Bold", sans-serif;
+    font-weight: 10;
     color: white;
     font-size: 180%;
     cursor: pointer;
-}
-
-.button2.active {
-    visibility: hidden;
 }
 
 .arrow-left{
@@ -194,11 +153,10 @@ html, body {
     position: absolute;
     height: 9vh;
     width: 9vw;
-    left: -1.2%;
-    top: 1.4%;
+    left: -1.9%;
+    top: 3.5%;
     z-index: 1;
 }
-
 .arrow {
     position: absolute;
     top: -170%;
@@ -211,45 +169,13 @@ html, body {
     -webkit-transform: rotate(-45deg);
 }
 
-.companyname {
-    position: relative;
-    top: 10%;
-    object-position: center;
-}
-
-.comname {
-    position: relative;
-    width: 66vw;
-    object-fit: cover;
-}
-
-.bottext {
-    position: absolute;
-    height: 10%;
-    padding: 0px;
-    width: auto;
-    z-index: 1;
-    top: 73%;
-    left: 18%;
-    font-family: "Agrandir Narrow", sans-serif;
-}
-
-.bottext.active {
-    visibility: hidden;
-}
-
-.t2 {
-    position: absolute;
-    top: 20%;
-}
-
 .boxx {
     z-index: 1;
     position: absolute;
-    height: 6vw;
-    width: 6vw;
+    height: 5vw;
+    width: 5vw;
     background-color: #c83a3a;
-    top: 58%;
+    top: 60%;
     left: 88%;
 }
 
@@ -258,7 +184,7 @@ html, body {
     top: 78%;
 }
 
-.event {
+.even {
     position: absolute;
     top: 100vh;
     height: 100vh;
@@ -269,7 +195,7 @@ html, body {
     z-index: 0;
 }
 
-.event.active {
+.even.active {
     visibility: hidden;
 }
 
@@ -279,7 +205,7 @@ html, body {
     height: 50%;
     width: 35%;
     left: 33%;
-    background-image: url("https://github.com/Blupsey/background-imagess/blob/main/White%20minimalist%20Merry%20Christmas%20card%20%20(6).png?raw=true");
+    background-image: url("https://raw.githubusercontent.com/Blupsey/background-imagess/main/White%20minimalist%20Merry%20Christmas%20card%20%20(6).png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -401,38 +327,47 @@ html, body {
     top: 93%;
     left: 61%;
 }
-.background.active {
-    position: absolute;
-    height: 200vh;
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-    background-image: url("https://github.com/Blupsey/background-imagess/blob/main/image_2026-03-15_202149917.png?raw=true");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+
+/* end of content1 */
+
+.content.active{
+    visibility: hidden;
 }
 
-.background.active { 
-    position: absolute; 
-    height: 200vh; 
-    width: 100%; 
-    padding: 0px; 
-    margin: 0px; 
-    background-image: url("https://github.com/Blupsey/background-imagess/blob/main/image_2026-03-15_202149917.png?raw=true"); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; } 
-    
+.content2 {
+    position: relative; 
+    left: 50%; 
+    transform: translate(-50%, -48.9%); 
+    height: 100vh;
+    width: 100%;
+    background-color: #fffcf7; 
+    border-radius: 40px; 
+    z-index: 4;
+    visibility: hidden;
+}
+
+.content2.active {
+    visibility: visible;
+}
+
+.bg1 {
+    position: absolute;
+    top: 45vh;
+    left: -3vw;
+    height: 110vh;
+    width: 67vw;
+    z-index: 5;
+}
+
 .idfk {
     position: absolute;
-    top: -16.5vh;
-    left: -17vw;
+    top: -15vh;
+    left: -17.2vw;
     height: 200vh; 
-    width: 99.8vw; 
+    width: 100vw; 
     padding: 0px; 
     margin: 0px; 
-    background-image: url("https://github.com/Blupsey/background-imagess/blob/main/White%20minimalist%20Merry%20Christmas%20card%20%20(1).png?raw=true"); 
+    background-image: url("https://raw.githubusercontent.com/Blupsey/background-imagess/main/White%20minimalist%20Merry%20Christmas%20card%20%20(1).png"); 
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
@@ -440,48 +375,29 @@ html, body {
     z-index: 3;
     pointer-events: none;
 }
-    
-.main { 
-    position: absolute; 
-    height: 100%; 
-    width: 100%; 
-    top: 0; 
-    left: 0; 
-    z-index: 2;
-}
-
-.main1 { 
-    position: absolute; 
-    left: 50%; 
-    transform: translate(-50%, -48.9%); 
-    height: 167vh; 
-    width: 67%; 
-    background-color: #fffcf7; 
-    border-radius: 40px; 
-    z-index: 4; 
-}
 
 .aboutus {
     position: absolute;
-    top: -78vh;
-    left: 17vw;
     object-position: center;
-    z-index: 3;
+    z-index: 5;
 }
 
 .abous {
     position: absolute;
+    top: 8vh;
+    left: 0.5vw;
     width: 65vw;
     object-fit: cover;
-    z-index: 3;
+    z-index: 2;
 }
 
-.next1 {
+.next2 {
     position: absolute;
-    top: 35vh;
-    left: 1vw;
+    top: 40vh;
+    left: 0.5vw;
     height: 8vh;
-    width: 9vw;
+    width: 15vw;
+    text-align: center;
     border-radius: 67px;
     background-color: #c83a3a;
     border-color: transparent;
@@ -491,14 +407,8 @@ html, body {
     color: white;
     font-size: 180%;
     cursor: pointer;
-}
 
-.content1 {
-    position: relative;
-    z-index: 4;
-}
-
-.texttt {
+}.texttt {
     position: relative;
     font-family: "Aileron", sans-serif;
     height: 10vh;
@@ -510,155 +420,777 @@ html, body {
 
 .t3 {
     position: absolute;
-    top: 58vh;
+    top: 65vh;
     left: 2vw;
 }
 
 .t4 {
     position: absolute;
-    top: 100vh;
+    top: 108vh;
     left: 33vw;
 }
 
 .t5 {
     position: absolute;
-    top: 125vh;
+    top: 128vh;
     left: 33vw;
 }
 
-.bg1 {
+/* content 3 */
+
+.content3 {
     position: absolute;
-    top: 23%;
-    left: -7%;
-    height: 110vh;
+    top: 0vh;
+    height: 167vh; 
+    width: 100%; 
+    border-radius: 40px; 
+    z-index: 10;
+    visibility: hidden;
+}
+
+.content3.active {
+    visibility: visible;
+}
+
+.ourteam {
+    position: absolute;
+    object-position: center;
+    z-index: 5;
+}
+
+.tim {
+    position: absolute;
+    top: 8vh;
+    left: 0.5vw;
+    width: 65vw;
+    object-fit: cover;
+    z-index: 2;
+}
+
+.bgshape {
+    position: relative;
+}
+
+.bgshap1 {
+    position: absolute;
+    height: 50vh;
+    left: 45vw;
+    top: 30vh;
+}
+
+.bgshap2 {
+    position: absolute;
+    height: 50vh;
+    left: 4vw;
+    top: 60vh;
+    transform: rotate(180deg);
+}
+
+.next3 {
+    position: absolute;
+    top: 40vh;
+    left: 50vw;
+    height: 8vh;
+    width: 15vw;
+    text-align: center;
+    border-radius: 67px;
+    background-color: #c83a3a;
+    border-color: transparent;
     z-index: 4;
+    font-family: "Agrandir Narrow Bold", sans-serif;
+    font-weight: 10;
+    color: white;
+    font-size: 180%;
+    cursor: pointer;
+}
+
+.team {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.teamm {
+    position: absolute;
+    height: 100vh;
+    left: 50%;
+    top: 23%;
+    transform: translateX(-50%);
+}
+
+.team1 {
+    position: absolute;
+    top: -120vh;
+    height: 167vh; 
+    width: 100%; 
+}
+
+.team1.active {
+    visibility: hidden;
+}
+
+.team2 {
+    position: absolute;
+    top: -120vh;
+    height: 167vh; 
+    width: 100%;
+    visibility: hidden;
+}
+
+.team2.active {
+    visibility: visible;
+}
+
+.team3 {
+    position: absolute;
+    top: -120vh;
+    height: 167vh; 
+    width: 100%;
+    visibility: hidden;
+}
+
+.team3.active {
+    visibility: visible;
+}
+
+.team4 {
+    position: absolute;
+    top: -120vh;
+    height: 167vh; 
+    width: 100%;
+    visibility: hidden;
+}
+
+.team4.active {
+    visibility: visible;
+}
+
+.team5 {
+    position: absolute;
+    top: -120vh;
+    height: 167vh; 
+    width: 100%;
+    visibility: hidden; 
+}
+
+.team5.active {
+    visibility: visible;
+}
+
+.team6 {
+    position: absolute;
+    top: -120vh;
+    height: 167vh; 
+    width: 100%;
+    visibility: hidden;
+}
+
+.team6.active {
+    visibility: visible;
+}
+
+.te1 {
+    position: absolute;
+    left: 44.7%;
+    top: 23.3%;
+    height: 38vh;
+    width: 7vw;
+    cursor: pointer;
+    opacity: 0;
+} 
+
+.te2 {
+    position: absolute;
+    left: 10vw;
+    top: 87vh;
+    height: 41vh;
+    width: 7.5vw;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.te3 {
+    position: absolute;
+    left: 20.3vw;
+    top: 87vh;
+    height: 41vh;
+    width: 7.5vw;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.te4 {
+    position: absolute;
+    left: 29.9vw;
+    top: 87vh;
+    height: 15vh;
+    width: 7.5vw;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.te5 {
+    position: absolute;
+    left: 39.3vw;
+    top: 87vh;
+    height: 41vh;
+    width: 7.5vw;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.te6 {
+    position: absolute;
+    left: 48.7vw;
+    top: 87vh;
+    height: 41vh;
+    width: 7.5vw;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.juli {
+    position: relative;
+    top: 167vh;
+    left: 37.5vw;
+    height: 29.8vh;
+}
+
+.jill {
+    position: relative;
+    top: 167vh;
+    left: -28.5vw;
+    height: 29.5vh;
+}
+
+.jc {
+    position: relative;
+    top: 171vh;
+    left: 37.5vw;
+    height: 27.4vh;
+}
+
+.seth {
+    position: relative;
+    top: 166vh;
+    left: -26.5vw;
+    height: 24vh;
+}
+
+.ace {
+    position: relative;
+    top: 170vh;
+    left: 35.5vw;
+    height: 28.4vh;
+}
+
+.nj {
+    position: relative;
+    top: 168.5vh;
+    left: -27.5vw;
+    height: 27vh;
+}
+
+.alex {
+    position: relative;
+    top: 171vh;
+    left: 36.5vw;
+    height: 24.4vh;
+}
+
+.kristin {
+    position: relative;
+    top: 167vh;
+    left: 37.5vw;
+    height: 29.8vh;
+}
+
+.andi {
+    position: relative;
+    top: 167vh;
+    left: -23.5vw;
+    height: 30vh;
+}
+
+.benj {
+    position: relative;
+    top: 167vh;
+    left: 37.5vw;
+    height: 29.8vh;
+}
+
+.lima {
+    position: relative;
+    top: 167vh;
+    left: -25.5vw;
+    height: 29.5vh;
+}
+
+/* content 4 */
+
+.content4 {
+    position: absolute;
+    top: 50vh;
+    visibility: hidden;
+}
+
+.content4.active{
+    visibility: visible;
+} 
+
+.vid {
+    position: relative;
+    height: 60vh;
+    width: 30vw;
+    top: -40vh;
+    left: 36vw;
+    z-index: 0;
+}
+
+.container {
+    position: absolute;
+    background-color: #ebe5db;
+    height: 75vh;
+    width: 33vw;
+    left: 2.5vw;
+    top: -40vh;
+    border-radius: 30px;
+}
+
+.product1 {
+    position: relative;
+    height: 50%;
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+}
+
+.product2 {
+    position: relative;
+    height: 50%;
+    width: 100.5%;
+    top: -1.2%;
+    border-radius: 0 0 30px 30px;
+}
+
+.rantext {
+    position: absolute;
+    height: 15vh;
+    top: 37vh;
+    left: 3vw;
+}
+
+.redbox {
+    background-color: #be012f;
+    position: absolute;
+    height: 18vh;
+    width: 18vw;
+    top: 10vh;
+    left: 41.5vw;
+    border-radius: 40px;
+    z-index: 5;
+}
+
+.projcontainer {
+    position: relative;
+    left: 0.75%;
+    top: -7.5vh;
+    height: 63vh;
+    width: 65.5vw;
+    background-color: #ebe5db;
+    border-radius: 40px;
+}
+
+.container1 {
+    border-radius: 10px;
+    position: relative;
+    height: 28vh;
+    width: 30vw;
+    left: 3%;
+    top: 5%;
+}
+
+.container2 {
+    border-radius: 10px;
+    position: relative;
+    height: 28vh;
+    width: 30vw;
+    left: 3%;
+    top: 7%;
+}
+
+.container3 {
+    border-radius: 10px;
+    position: absolute;
+    height: 28vh;
+    width: 30vw;
+    right: 3%;
+    top: 5%;
+}
+
+.container4 {
+    border-radius: 10px;
+    position: absolute;
+    height: 28vh;
+    width: 30vw;
+    right: 3%;
+    top: 32.5vh;
+}
+
+.proj {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.rbtext {
+    font-family: "Agrandir Narrow Bold", sans-serif;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    top: 5%;
+    color: white;
+    font-size: 3vh;
+}
+
+.adinumber {
+    position: absolute;
+    top: 40vh;
+    left: 52vw;
+    height: 3vh;
+    width: 13vw;
+    text-align: left;
+    font-family: "Telegraf", sans-serif;
+    font-size: 3vh;
 }
 </style>
 <body>
-        <div class="buttons">
+    <div class="background"></div>
+    <div class="main" data-state="0">
+        <div class="navbar">
             <div class="line"></div>
             <button class="button1 b1">About Us</button>
-            <button class="button1 b2">Our Story</button>
-            <button class="button1 b3">Our Inspiration</button>
+            <button class="button1 b2">Our Team</button>
+            <button class="button1 b3">Our Products</button>
             <button class="button1 b4">Our Projects</button>
-            <button class="button1 b5">Locations</button>
         </div>
-        <div class="otherbuttons">
-            <button class="button2">Talk with us
-                <div class="pictur">
-                    <img src="https://github.com/Blupsey/background-imagess/blob/main/White%20minimalist%20Merry%20Christmas%20card%20%20(7).png?raw=true">
-                </div>
-                <div class="arrow-left">
-                    <div class="arrow"></div>
-                </div>
-            </button>
-            <div class="bottext">
-                <p class="t1">Where we tread,</p>
-                <p class="t2">safety follows.</p>
-            </div>
-        </div>
-        <div class="background"></div>
-        <div class="mainpage">
+        <div class="content">
             <div class="companyname">
-                <img src="https://github.com/Blupsey/background-imagess/blob/main/White%20minimalist%20Merry%20Christmas%20card%20%20(8)(1)(1).png?raw=true" class="comname">
+                <img src="https://raw.githubusercontent.com/Blupsey/background-imagess/main/White%20minimalist%20Merry%20Christmas%20card%20%20(8)(1)(1).png" class="comname">
             </div>
             <div class="randomboxes">
                 <div class="boxx box1"></div>
                 <div class="boxx box2"></div>
             </div>
-        </div>
-        <div class="event">
-            <div class="textt">
-                <p class="e1">annual</p>
-                <p class="e2">tech</p>
-                <p class="e3">launch</p>
-                <p class="e4">event</p>
-            </div>
-            <div class="verttext">
-                <p>WWW.IGNIFORMSYSTEMS.COM</p>
-            </div>
-            <div class="dates">
-                <p class="d1">JUNE</p>
-                <p class="d2">11</p>
-                <p class="d3">2030</p>
-                <p class="d4">9AM-6PM</p>
-            </div>
-            <div class="locationtext">
-                <p class="l1">DEW</p>
-                <p class="l2">DRIVE</p>
-                <p class="l3">ACTIVITY</p>
-                <p class="l4">CENTER</p>
-            </div>
-            <div class="pictur2">
+            <button class="next">Talk with us
+                <div class="pictur">
+                    <img src="https://raw.githubusercontent.com/Blupsey/background-imagess/main/White%20minimalist%20Merry%20Christmas%20card%20%20(7).png">
+                </div>
+                <div class="arrow-left">
+                    <div class="arrow"></div>
+                </div></button>
+            <div class="bottext">
+                <p class="t1">Where we tread,</p>
+                <p class="t2">safety follows.</p>
             </div>
         </div>
-        <div class="homepage">
+        <div class="content2">
             <div class="aboutus">
-                <img src="https://github.com/Blupsey/background-imagess/blob/main/about%20us.png?raw=true" class="abous">
+                <img src="https://raw.githubusercontent.com/Blupsey/background-imagess/main/about%20us.png" class="abous">
             </div>
-            <div class="main">
-                <div class="main1">
-                    <div class="idfk"></div>
-                    <img src="https://github.com/Blupsey/background-imagess/blob/main/about%20us%20(2).png?raw=true" class="bg1">
-                    <button class="next1">Next</button>
-                    <div class="content1">
-                        <p class="texttt t3"> 
-                            IgniForm is a company focused on developing smart protection 
-                            technologies and monitoring systems that improve safety in 
-                            homes, schools, and communities. Guided by the principles of 
-                            adaptability and resilience, symbolized by the salamander and 
-                            fire, our mission is to bridge the safety and technology gap 
-                            in the Philippines by creating accessible IoT and monitoring 
-                            systems for everyday safety. </p>
-                        <p class="texttt t4">
-                             From the beginning, the company was organized around 
-                             collaboration. The operations team managed projects 
-                             and coordinated activities, while the technology division 
-                             architects designed frameworks for risk detection and 
-                             scalability, and information officers and engineers maintained 
-                             secure platforms. At the same time, safety officers and researchers 
-                             strengthened both physical and digital protection.
-                        </p>
-                        <p class="texttt t5"> 
-                            This foundation allowed IgniForm to grow from a student-led initiative 
-                            into a formal venture. Guided by its mission to provide accessible safety 
-                            technologies and its vision of building a nationwide smart protection network 
-                            by 2050, IgniForm continues to foster innovation by opening opportunities for 
-                            students, tech enthusiasts, and small developers to collaborate.</p>
-                    </div>
+            <div class="idfk"></div>
+            <img src="https://raw.githubusercontent.com/Blupsey/background-imagess/main/about%20us%20(2).png" class="bg1">
+            <button class="next2">Next</button>
+            <div class="content1">
+                <p class="texttt t3"> 
+                    IgniForm is a company focused on developing smart protection 
+                    technologies and monitoring systems that improve safety in 
+                    homes, schools, and communities. Guided by the principles of 
+                    adaptability and resilience, symbolized by the salamander and 
+                    fire, our mission is to bridge the safety and technology gap 
+                    in the Philippines by creating accessible IoT and monitoring 
+                    systems for everyday safety. </p>
+                <p class="texttt t4">
+                     From the beginning, the company was organized around 
+                     collaboration. The operations team managed projects 
+                     and coordinated activities, while the technology division 
+                     architects designed frameworks for risk detection and 
+                     scalability, and information officers and engineers maintained 
+                     secure platforms. At the same time, safety officers and researchers 
+                     strengthened both physical and digital protection.
+                </p>
+                <p class="texttt t5">
+                    This foundation allowed IgniForm to grow from a student-led initiative 
+                    into a formal venture. Guided by its mission to provide accessible safety 
+                    technologies and its vision of building a nationwide smart protection network 
+                    by 2050, IgniForm continues to foster innovation by opening opportunities for 
+                    students, tech enthusiasts, and small developers to collaborate.</p>
+            </div>
+        </div>
+        <div class="content3">
+            <div class="ourteam">
+                <img src="https://raw.githubusercontent.com/Blupsey/background-imagess/main/about%20us%20(4)(1).png" class="tim">
+            </div>
+            <div class="bgshape">
+                <img src="https://raw.githubusercontent.com/Blupsey/background-imagess/main/about%20us%20(3).png" class="bgshap1">
+                <img src="https://raw.githubusercontent.com/Blupsey/background-imagess/main/about%20us%20(3).png" class="bgshap2">
+            </div>
+            <button class="next3">Next</button>
+            <div class="team">
+                <img src="https://raw.githubusercontent.com/Blupsey/background-imagess/main/about%20us%20(5)(1).png" class="teamm">
+            </div>
+            <div class="buts">
+                <button class="te1"></button>
+                <button class="te2"></button>
+                <button class="te3"></button>
+                <button class="te4"></button>
+                <button class="te5"></button>
+                <button class="te6"></button>
+                
+            </div>
+            <div class="info">
+                <div class="team1">
+                    <img src="https://raw.githubusercontent.com/Blupsey/background-imagess/main/team.png" class="juli">
+                    <img src="https://raw.githubusercontent.com/Blupsey/background-imagess/main/team%20(1).png" class="jill">
+                </div>
+                <div class="team2">
+                    <img src="https://github.com/Blupsey/background-imagess/blob/main/ewan%20(1).png?raw=true" class="jc">
+                    <img src="https://github.com/Blupsey/background-imagess/blob/main/ewan%20(2).png?raw=true" class="seth">
+                </div>
+                <div class="team3">
+                    <img src="https://github.com/Blupsey/background-imagess/blob/main/ewan%20(4).png?raw=true" class="ace">
+                    <img src="https://github.com/Blupsey/background-imagess/blob/main/ewan%20(3).png?raw=true" class="nj">
+                </div>
+                <div class="team4">
+                    <img src="https://github.com/Blupsey/background-imagess/blob/main/ewan.png?raw=true" class="alex">
+                </div>
+                <div class="team5">
+                    <img src="https://github.com/Blupsey/background-imagess/blob/main/ewan%20(5).png?raw=true" class="kristin">
+                    <img src="https://github.com/Blupsey/background-imagess/blob/main/ewan%20(6).png?raw=true" class="andi">
+                </div>
+                <div class="team6">
+                    <img src="https://github.com/Blupsey/background-imagess/blob/main/ewan%20(8).png?raw=true" class="benj">
+                    <img src="https://github.com/Blupsey/background-imagess/blob/main/ewan%20(7).png?raw=true" class="lima">
                 </div>
             </div>
         </div>
+        <div class="content4">
+            <iframe
+                src="https://player.vimeo.com/video/1174964954?autoplay=1&loop=1&muted=1&controls=0" 
+                frameborder="0" 
+                allow="autoplay; picture-in-picture" 
+                loading="eager"
+                class="vid"></iframe>
+            <div class="container">
+                <img src="https://github.com/Blupsey/background-imagess/blob/main/ewan%20(12).png?raw=true" class="product1">
+                <img src="https://github.com/Blupsey/background-imagess/blob/main/ewan%20(11).png?raw=true" class="product2">
+            </div>
+            <div class="redbox">
+                <p class="rbtext rb1">WHERE WE TREAD</p>
+                <p class="rbtext rb2">SAFE FOLLOWS</p>
+            </div>
+            <div class="randomtext">
+                <img src="https://github.com/Blupsey/background-imagess/blob/main/ewan%20(13).png?raw=true" class="rantext">
+            </div>
+            <p class="adinumber">For more inquiries, please call 09948541873</p>
+            <div class="projcontainer">
+                <div class="container1">
+                    <img src="https://github.com/Blupsey/background-imagess/blob/main/1.png?raw=true" class="proj1 proj">
+                </div>
+                <div class="container2">
+                    <img src="https://github.com/Blupsey/background-imagess/blob/main/2.png?raw=true" class="proj2 proj">
+                </div>
+                <div class="container3">
+                    <img src="https://github.com/Blupsey/background-imagess/blob/main/3.png?raw=true" class="proj3 proj">
+                </div>
+                <div class="container4">
+                    <img src="https://github.com/Blupsey/background-imagess/blob/main/4.png?raw=true" class="proj4 proj">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="even">
+        <div class="textt">
+            <p class="e1">annual</p>
+            <p class="e2">tech</p>
+            <p class="e3">launch</p>
+            <p class="e4">event</p>
+        </div>
+        <div class="verttext">
+            <p>WWW.IGNIFORMSYSTEMS.COM</p>
+        </div>
+        <div class="dates">
+            <p class="d1">JUNE</p>
+            <p class="d2">11</p>
+            <p class="d3">2030</p>
+            <p class="d4">9AM-6PM</p>
+        </div>
+        <div class="locationtext">
+            <p class="l1">DEW</p>
+            <p class="l2">DRIVE</p>
+            <p class="l3">ACTIVITY</p>
+            <p class="l4">CENTER</p>
+        </div>
+        <div class="pictur2"></div>
+    </div>
 </body>
 <script>
-let b1 = document.querySelector('.b1');
-let b2 = document.querySelector('.b2');
-let b3 = document.querySelector('.b3');
-let b4 = document.querySelector('.b4');
-let b5 = document.querySelector('.b5');
-let buttons = document.querySelector('.buttons');
-let mainpage = document.querySelector('.mainpage');
-let button2 = document.querySelector('.button2');
-let event = document.querySelector('.event');
-let bottext = document.querySelector('.bottext');
-let homepage = document.querySelector('.homepage');
+    let next = document.querySelector('.next');
+let main = document.querySelector('.main');
+let content = document.querySelector('.content');
+let even = document.querySelector('.even');
 let background = document.querySelector('.background');
+let content2 = document.querySelector('.content2');
+let next2 = document.querySelector('.next2');
+let content3 = document.querySelector('.content3');
+let next3 = document.querySelector('.next3');
+let te1 = document.querySelector('.te1');
+let te2 = document.querySelector('.te2');
+let te3 = document.querySelector('.te3');
+let te4 = document.querySelector('.te4');
+let te5 = document.querySelector('.te5');
+let te6 = document.querySelector('.te6');
+let team1 = document.querySelector('.team1');
+let team2 = document.querySelector('.team2');
+let team3 = document.querySelector('.team3');
+let team4 = document.querySelector('.team4');
+let team5 = document.querySelector('.team5');
+let team6 = document.querySelector('.team6');
+let content4 = document.querySelector('.content4');
 
-b1.onclick = function(){
-    mainpage.classList.toggle('active');
-    button2.classList.toggle('active');
-    event.classList.toggle('active');
-    bottext.classList.toggle('active');
-    homepage.classList.toggle('active');
-    background.classList.toggle('active');
+
+next.onclick = function(){
+    main.dataset.state = main.dataset.state === "0" ? "1" : "0";
+    main.style.animation = "enlarge 0.5s ease-in-out forwards";
+    content.classList.add('active');
+    even.classList.add('active');
+    background.classList.add('active');
+    content2.classList.add('active');
 }
 
-button2.onclick = function(){
-    mainpage.classList.toggle('active');
-    button2.classList.toggle('active');
-    event.classList.toggle('active');
-    bottext.classList.toggle('active');
-    homepage.classList.toggle('active');
-    background.classList.toggle('active');
-}</script>
+next2.onclick = function(){
+    content2.classList.remove('active');
+    content3.classList.add('active');
+    main.classList.add('active');
+}
+
+next3.onclick = function(){
+    content3.classList.remove('active');
+    content4.classList.add('active');
+    team6.classList.remove('active');
+    team1.classList.add('active');
+    team2.classList.remove('active');
+    team3.classList.remove('active');
+    team4.classList.remove('active');
+    team5.classList.remove('active');
+}
+
+te1.onclick = function(){
+    if (team1.classList.contains('active')){
+        team1.classList.remove('active');
+        team2.classList.remove('active');
+        team3.classList.remove('active');
+        team4.classList.remove('active');
+        team5.classList.remove('active');
+        team6.classList.remove('active');
+    } else {
+        team1.classList.remove('active');
+        team2.classList.remove('active');
+        team3.classList.remove('active');
+        team4.classList.remove('active');
+        team5.classList.remove('active');
+        team6.classList.remove('active');
+        te2.style.pointerEvents = 'auto';
+    }
+}
+
+te2.onclick = function(){
+    if (team2.classList.contains('active')){
+        te2.style.pointerEvents = 'none';
+        team2.classList.remove('active');
+        team3.classList.remove('active');
+        team4.classList.remove('active');
+        team5.classList.remove('active');
+        team6.classList.remove('active');
+    } else {
+        team2.classList.add('active');
+        team1.classList.add('active');
+        team3.classList.remove('active');
+        team4.classList.remove('active');
+        team5.classList.remove('active');
+        team6.classList.remove('active');
+    }
+}
+
+te3.onclick = function(){
+    if (team3.classList.contains('active')){
+        te3.style.pointerEvents = 'none';
+        team3.classList.remove('active');
+        team2.classList.remove('active');
+        team4.classList.remove('active');
+        team5.classList.remove('active');
+        team6.classList.remove('active');
+    } else {
+        team3.classList.add('active');
+        team1.classList.add('active');
+        team2.classList.remove('active');
+        team4.classList.remove('active');
+        team5.classList.remove('active');
+        team6.classList.remove('active');
+    }
+}
+
+te4.onclick = function(){
+    if (team4.classList.contains('active')){
+        te4.style.pointerEvents = 'none';
+        team3.classList.remove('active');
+        team2.classList.remove('active');
+        team4.classList.remove('active');
+        team5.classList.remove('active');
+        team6.classList.remove('active');
+    } else {
+        team4.classList.add('active');
+        team1.classList.add('active');
+        team2.classList.remove('active');
+        team3.classList.remove('active');
+        team5.classList.remove('active');
+        team6.classList.remove('active');
+    }
+}
+
+te5.onclick = function(){
+    if (team5.classList.contains('active')){
+        te5.style.pointerEvents = 'none';
+        team3.classList.remove('active');
+        team2.classList.remove('active');
+        team4.classList.remove('active');
+        team5.classList.remove('active');
+        team6.classList.remove('active');
+    } else {
+        team5.classList.add('active');
+        team1.classList.add('active');
+        team2.classList.remove('active');
+        team3.classList.remove('active');
+        team4.classList.remove('active');
+        team6.classList.remove('active');
+    }
+}
+
+te6.onclick = function(){
+    if (team6.classList.contains('active')){
+        te6.style.pointerEvents = 'none';
+        team3.classList.remove('active');
+        team2.classList.remove('active');
+        team4.classList.remove('active');
+        team5.classList.remove('active');
+        team6.classList.remove('active');
+    } else {
+        team6.classList.add('active');
+        team1.classList.add('active');
+        team2.classList.remove('active');
+        team3.classList.remove('active');
+        team4.classList.remove('active');
+        team5.classList.remove('active');
+    }
+}
+</script>
 </html>
